@@ -9,9 +9,11 @@
 <body>
     <form action="edit" method="POST">
     <input type="hidden" name="id" value="{{sanPham._id}}">
-    Name : <input type="text" name="name" value="{{sanPham.TenSP}}">
+    Name : <input type="text" name="name" value="{{sanPham.ProductName}}">
     <br>
-    Gia : <input type="text" name="gia" id="" value="{{sanPham.Price}}">
+    Mau Sac: <input type="text" name="color" value="{{sanPham.Color}}">
+    <br>
+    Gia : <input type="text" name="price" id="" value="{{sanPham.Price}}">
     <input type="submit" value="Update">
     </form>
 </body>

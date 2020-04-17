@@ -25,9 +25,9 @@ router.get('/edit', async(req,res)=>{
 
 router.post('/edit', async(req,res)=>{
     let id = req.body.id;
-    let name = req.body.EmployeeName;
-    let sdt = req.body.PhoneNumber;
-    let address = req.body.Adress;
+    let name = req.body.name;
+    let sdt = req.body.phone;
+    let address = req.body.adress;
     let newValues ={$set : {EmployeeName: name, PhoneNumber : sdt, Adress: address}};
     var ObjectID = require('mongodb').ObjectID;
     let condition = {"_id" : ObjectID(id)};
