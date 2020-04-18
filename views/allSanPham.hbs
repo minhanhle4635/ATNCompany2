@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
+
 <body>
-    <table width="50%" border="1">
+    <header>
+    <div class="container">
+            <a href="/index"><img src="logo.png" alt="logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/sanpham">Product</a></li>
+                    <li><a href="/nhanvien">Employee</a></li>
+                    <li><a href="/index/about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <table class="content-table" width="50%" border="1">
+        <thead>
         <tr>
             <td>Id</td>
             <td>Ten SanPham</td>
@@ -15,6 +31,8 @@
             <td>Price</td>
             <td>Update</td>
         </tr>
+        </thead>
+        <tbody>
         {{# each sanPham}}
         <tr>
             <td>{{_id}}</td>
@@ -24,6 +42,7 @@
             <td><a href="/sanpham/edit?id={{_id}}">Update</a></td>
         </tr>  
         {{/each}}
+        </tbody>
     </table>
    
 </body>

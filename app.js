@@ -24,5 +24,6 @@ app.use('/index',indexController);
 app.use('/sanpham',sanPhamController);
 app.use('/upload',uploadFileController);
 app.use('/nhanvien',employeeController);
+app.use(express.static('public'));
 
 var server=app.listen(3000,function() {});
