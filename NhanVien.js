@@ -20,7 +20,6 @@ router.get('/edit', async(req,res)=>{
     let dbo = client.db("ATNCompany");
     let result = await dbo.collection("Employee").findOne({"_id" : ObjectID(id)});
     res.render('editNhanVien',{NhanVien:result});
-
 })
 
 router.post('/edit', async(req,res)=>{
@@ -35,7 +34,7 @@ router.post('/edit', async(req,res)=>{
     let client= await MongoClient.connect(url);
     let dbo = client.db("ATNCompany");
     await dbo.collection("Employee").updateOne(condition,newValues);
-    //
+    
     let results = await dbo.collection("Employee").find({}).toArray();
     res.render('allNhanVien',{NhanVien:results});
 })
@@ -50,7 +49,7 @@ router.post('/insert',async (req,res)=>{
     let name = req.body.EmployeeName;
     let sdt = req.body.PhoneNumber;
     let address = req.body.Adress;
-    let newE = {EmployeeName : name,PhoneNumber : sdt , Adress : address};
+    let newE = {EmployeeName : name, PhoneNumber : sdt, Adress : address};
     await dbo.collection("Employee").insertOne(newE);
    
     let results = await dbo.collection("Employee").find({}).toArray();
