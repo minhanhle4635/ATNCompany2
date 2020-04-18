@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 <body>
     <header>
     <div class="container">
-            <a href="/index"><img src="logo.png" alt="logo" class="logo"></a>
+            <a href="/index"><img src="/logo.png" alt="logo" class="logo"></a>
             <nav>
                 <ul>
                     <li><a href="/index">Home</a></li>
@@ -21,14 +21,18 @@
             </nav>
         </div>
     </header>
-    <form action="edit" method="POST">
-    <input type="hidden" name="id" value="{{NhanVien._id}}">
-    Name : <input type="text" name="name" value="{{NhanVien.EmployeeName}}">
-    <br>
-    SDT : <input type="text" name="phone" value="{{NhanVien.PhoneNumber}}">
-    <br>
-    Dia chi : <input type="text" name="adress" id="" value="{{NhanVien.Adress}}">
-    <input type="submit" value="Update">
-    </form>
+    <div class="wrapper">
+        <div class="contact-form">
+            <form class="input-fields" action="edit" method="POST">
+                <input type="hidden" name="id" value="{{NhanVien._id}}">
+                Name: <input type="text" class="input" name="name" value="{{NhanVien.EmployeeName}}">
+                <br>
+                SDT: <input type="text" class="input" name="phone" value="{{NhanVien.PhoneNumber}}">
+                <br>
+                Dia chi: <input type="text" class="input" name="adress" id="" value="{{NhanVien.Adress}}">
+                <input type="submit" class="button" value="Update">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
