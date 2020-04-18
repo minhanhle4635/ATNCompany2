@@ -19,11 +19,11 @@ var sanPhamController = require('./sanPham.js');
 var uploadFileController= require('./uploadFile.js');
 var employeeController = require('./NhanVien.js');
 
-
+app.use(express.static('public'));
 app.use('/index',indexController);
 app.use('/sanpham',sanPhamController);
 app.use('/upload',uploadFileController);
 app.use('/nhanvien',employeeController);
-app.use(express.static('public'));
+
 
 var server=app.listen(3000,function() {});
