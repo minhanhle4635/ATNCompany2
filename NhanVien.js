@@ -40,7 +40,6 @@ router.post('/edit', async(req,res)=>{
     res.render('allNhanVien',{NhanVien:results});
 })
 
-//sanpham/insert->browser
 router.get('/insert',(req,res)=>{
     res.render('insertNhanVien');
 })
@@ -58,12 +57,10 @@ router.post('/insert',async (req,res)=>{
     res.render('allNhanVien',{NhanVien:results});
 })
 
-//sanpham/search->browser
 router.get('/search',(req,res)=>{
     res.render('searchNhanVien');
 })
 
-//sanpham/search ->post
 router.post('/search',async (req,res)=>{
     let searchSP = req.body.ProductName;
     let client= await MongoClient.connect(url);
