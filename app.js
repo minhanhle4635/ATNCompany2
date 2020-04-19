@@ -26,4 +26,4 @@ app.use('/upload',uploadFileController);
 app.use('/nhanvien',employeeController);
 
 
-var server=app.listen(3000,function() {});
+app.listen(process.env.PORT || 3000);
