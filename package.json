@@ -1,0 +1,30 @@
+{
+  "name": "assignment-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consolidate": "^0.15.1",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "fs-extra": "^9.0.0",
+    "handlebars": "^4.7.4",
+    "mongodb": "^3.5.5",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhanhlegch190017/ATNCompany2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhanhlegch190017/ATNCompany2/issues"
+  },
+  "homepage": "https://github.com/minhanhlegch190017/ATNCompany2#readme"
+}
