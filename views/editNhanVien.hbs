@@ -10,10 +10,10 @@
 <body>
     <header>
     <div class="container">
-            <a href="/index"><img src="/logo.png" alt="logo" class="logo"></a>
+            <a href="/homepage"><img src="/logo.png" alt="logo" class="logo"></a>
             <nav>
                 <ul>
-                    <li><a href="/index">Home</a></li>
+                    <li><a href="/homepage">Home</a></li>
                     <li><a href="/sanpham">Product</a></li>
                     <li><a href="/nhanvien">Employee</a></li>
                     <li><a href="/index/about">About</a></li>
@@ -27,9 +27,11 @@
                 <input type="hidden" name="id" value="{{NhanVien._id}}">
                 Name: <input type="text" class="input" name="name" value="{{NhanVien.EmployeeName}}">
                 <br>
-                SDT: <input type="text" class="input" name="phone" value="{{NhanVien.PhoneNumber}}">
+                Phone Number: <input type="text" class="input" name="phone" value="{{NhanVien.PhoneNumber}}">
                 <br>
-                Dia chi: <input type="text" class="input" name="adress" id="" value="{{NhanVien.Adress}}">
+                Address: <input type="text" class="input" name="adress" id="" value="{{NhanVien.Adress}}">
+                <br>
+                Status: <input type="text" class="input" name="status" id="" value="{{NhanVien.Status}}">
                 <input type="submit" class="button" value="Update">
             </form>
         </div>

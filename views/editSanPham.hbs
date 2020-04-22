@@ -10,10 +10,10 @@
 <body>
     <header>
     <div class="container">
-            <a href="/index"><img src="/logo.png" alt="logo" class="logo"></a>
+            <a href="/homepage"><img src="/logo.png" alt="logo" class="logo"></a>
             <nav>
                 <ul>
-                    <li><a href="/index">Home</a></li>
+                    <li><a href="/homepage">Home</a></li>
                     <li><a href="/sanpham">Product</a></li>
                     <li><a href="/nhanvien">Employee</a></li>
                     <li><a href="/index/about">About</a></li>
@@ -27,9 +27,11 @@
                 <input type="hidden" name="id" value="{{sanPham._id}}">
                 Name : <input type="text" name="name" value="{{sanPham.ProductName}}">
                 <br>
-                Mau Sac: <input type="text" name="color" value="{{sanPham.Color}}">
+                Origin: <input type="text" name="origin" value="{{sanPham.Origin}}">
                 <br>
-                Gia : <input type="text" name="price" id="" value="{{sanPham.Price}}">
+                Price : <input type="text" name="price" value="{{sanPham.Price}}">
+                <br>
+                Status : <input type="text" name="status" value="{{sanPham.Status}}">
                 <input type="submit" class="button" value="Update">
             </form>
         </div>

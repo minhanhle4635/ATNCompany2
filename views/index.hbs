@@ -10,17 +10,22 @@
 <body>
     <header>
         <div class="container">
-            <a href="/index"><img src="logo.png" alt="logo" class="logo"></a>
+            <img src="logo.png" alt="logo" class="logo">
             <nav>
                 <ul>
-                    <li><a href="/index">Home</a></li>
-                    <li><a href="/sanpham">Product</a></li>
-                    <li><a href="/nhanvien">Employee</a></li>
-                    <li><a href="/index/about">About</a></li>
+                    <li><a href="/about">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
+    <div class="login-form">
+			<h1>Login Form</h1>
+			<form action="homepage" method="POST">
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit" value="Login">
+			</form>
+            <a href="/signup"><input type="button" value="SignUp"></a>
+    </div>
 </body>
 </html>

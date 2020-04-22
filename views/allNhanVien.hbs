@@ -10,10 +10,10 @@
 <body>
     <header>
     <div class="container">
-            <a href="/index"><img src="logo.png" alt="logo" class="logo"></a>
+            <a href="/homepage"><img src="logo.png" alt="logo" class="logo"></a>
             <nav>
                 <ul>
-                    <li><a href="/index">Home</a></li>
+                    <li><a href="/homepage">Home</a></li>
                     <li><a href="/sanpham">Product</a></li>
                     <li><a href="/nhanvien">Employee</a></li>
                     <li><a href="/index/about">About</a></li>
@@ -30,25 +30,25 @@
     <table class="content-table" width="50%" border="1">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Ten Nhan Vien</th>
-                <th>SDT</th>
-                <th>Dia chi</th>
-                <th>Update</th>
+                <th>Employee Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody>
         {{# each NhanVien}}
         <tr>
-            <td>{{_id}}</td>
             <td>{{EmployeeName}}</td>
             <td>{{PhoneNumber}}</td>
             <td>{{Adress}}</td>
-            <td><a href="/nhanvien/edit?id={{_id}}">Update</a></td>
+            <td>{{Status}}</td>
+            <td><a href="/nhanvien/edit?id={{_id}}">Edit</a>
+            </td>
         </tr> 
         {{/each}}
         </tbody> 
-    </table>
-    
+    </table>    
 </body>
 </html>

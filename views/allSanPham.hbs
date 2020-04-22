@@ -11,10 +11,10 @@
 <body>
     <header>
     <div class="container">
-            <a href="/index"><img src="logo.png" alt="logo" class="logo"></a>
+            <a href="/homepage"><img src="logo.png" alt="logo" class="logo"></a>
             <nav>
                 <ul>
-                    <li><a href="/index">Home</a></li>
+                    <li><a href="/homepage">Home</a></li>
                     <li><a href="/sanpham">Product</a></li>
                     <li><a href="/nhanvien">Employee</a></li>
                     <li><a href="/index/about">About</a></li>
@@ -24,28 +24,31 @@
     </header>
 
     <div class="btn">
-        <a href="/sanpham/search"><input type="button" value="Search Employee"></a>
-        <a href="/sanpham/insert"><input type="button" value="New Employee"></a>
+        <a href="/sanpham/search"><input type="button" value="Search Product"></a>
+        <a href="/sanpham/insert"><input type="button" value="New Product"></a>
     </div>
 
     <table class="content-table" width="50%" border="1">
         <thead>
         <tr>
-            <td>Id</td>
-            <td>Ten SanPham</td>
-            <td>Mau Sac</td>
+            <td>Product Name</td>
+            <td>Origin</td>
             <td>Price</td>
-            <td>Update</td>
+            <td>Status</td>
+            <td>Image</td>
+            <td>Edit</td>
         </tr>
         </thead>
         <tbody>
         {{# each sanPham}}
         <tr>
-            <td>{{_id}}</td>
             <td>{{ProductName}}</td>
-            <td>{{[MauSac]}}{{[Color]}}</td>
+            <td>{{[Origin]}}</td>
             <td>{{Price}}</td>
-            <td><a href="/sanpham/edit?id={{_id}}">Update</a></td>
+            <td>{{Status}}</td>
+            <td><img src='../homepage/photo/{{_id}}' alt="" width="180px" height="150px" style="margin-left: 75px;margin-top:-40px"></td>
+            <td><a href="/sanpham/edit?id={{_id}}">Edit</a>
+            </td>
         </tr>  
         {{/each}}
         </tbody>
