@@ -12,6 +12,7 @@ var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb+srv://minhanhle:minhanh123@cluster0-p2f69.gcp.mongodb.net/test?retryWrites=true&w=majority';
 
 ObjectID = require('mongodb').MongoClient;
+ObjectId = require('mongodb').ObjectId;
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -43,12 +44,12 @@ router.get('/photo/:id', async(req, res) => {
     let dbo = client.db("ATNCompany");
     dbo.collection('Product').findOne({'_id': ObjectId(filename)}, {Image : 1}, (err, result) => {
       if (err) return console.log(err)
-      res.contentType('image/jpeg'); 
+      res.contentType('image'); 
       res.send(result.Image.image.buffer);
     })
   })
 
-router.get('/',async (req,res)=>{
+  router.get('/',async (req,res)=>{
     if(!req.session.username)
   {
     return res.status(401).send();
@@ -60,7 +61,7 @@ router.get('/',async (req,res)=>{
     let results = await dbo.collection("Product").find({}).toArray();
     res.render('allSanPham',{sanPham:results});
   }
-})
+  })
 
 router.get('/edit', async(req,res)=>{
     if(!req.session.username)
@@ -81,20 +82,29 @@ router.get('/edit', async(req,res)=>{
 
 router.post('/edit', async(req,res)=>{
     let id = req.body.id;
-    let name = req.body.name;
-    let origin = req.body.origin;
-    let price = req.body.price;
-    let status = req.body.status;
-    let newValues ={$set : {ProductName: name, Origin : origin, Price: price, Status: status}};
+    let name = req.body.ProductName;
+    let origin = req.body.Origin;
+    let price = req.body.Price;
+    let status = req.body.Status;
+
+    var img = fs.readFileSync(req.file.path);
+    var encode_image = img.toString('base64');
+
+    var finalImg = {
+      contentType: req.file.mimetype,
+      image: new Buffer(encode_image, 'base64')
+    };
+
+    let newValue ={$set : {ProductName: name, Origin : origin, Price: price, Status: status, Image : finalImg}};
+
     var ObjectID = require('mongodb').ObjectID;
     let condition = {"_id" : ObjectID(id)};
     
     let client= await MongoClient.connect(url);
     let dbo = client.db("ATNCompany");
-    await dbo.collection("Product").updateOne(condition,newValues);
+    await dbo.collection("Product").updateOne(condition,newValue);
     
-    let results = await dbo.collection("Product").find({}).toArray();
-    res.render('allSanPham',{sanPham:results});
+    res.redirect('/sanpham');
 })
 
 
@@ -116,7 +126,7 @@ router.post('/insert',upload.single('picture'),async (req,res)=>{
     let origin = req.body.Origin;
     let price = req.body.Price;
     let status = req.body.Status;
-    // let newSP = {ProductName : name,Color : color , Price : gia};
+
     var img = fs.readFileSync(req.file.path);
     var encode_image = img.toString('base64');
 
@@ -129,7 +139,7 @@ router.post('/insert',upload.single('picture'),async (req,res)=>{
     await dbo.collection("Product").insertOne(newProduct);
    
     let results = await dbo.collection("Product").find({}).toArray();
-    res.redirect('/sanpham',{sanPham:results});
+    res.redirect('/sanpham');
 })
 
 router.get('/search',(req,res)=>{
@@ -142,7 +152,6 @@ router.get('/search',(req,res)=>{
     res.render('searchSanPham');
   }
 })
-
 
 router.post('/search',async (req,res)=>{
     let searchSP = req.body.ProductName;

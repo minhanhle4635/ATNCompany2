@@ -43,6 +43,7 @@ router.post('/edit', async(req,res)=>{
     let address = req.body.adress;
     let status = req.body.status;
     let newValues ={$set : {EmployeeName: name, PhoneNumber : sdt, Adress: address, Status : status}};
+    
     var ObjectID = require('mongodb').ObjectID;
     let condition = {"_id" : ObjectID(id)};
     
@@ -50,8 +51,7 @@ router.post('/edit', async(req,res)=>{
     let dbo = client.db("ATNCompany");
     await dbo.collection("Employee").updateOne(condition,newValues);
     
-    let results = await dbo.collection("Employee").find({}).toArray();
-    res.render('allNhanVien',{NhanVien:results});
+    res.redirect('/sanpham');
 })
 
 router.get('/insert',(req,res)=>{
