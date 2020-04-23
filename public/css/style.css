@@ -147,9 +147,9 @@ nav a:hover::before {
   border:0;
   border-bottom: 2px solid #c5ecfd;
   padding: 10px;
-  color: #c5ecfd;
+  color: #000000;
   width: 100%;
-  text-emphasis-color: #cccccc;
+  text-emphasis-color: #000000;
 }
 
 .button{

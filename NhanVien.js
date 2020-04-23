@@ -51,7 +51,7 @@ router.post('/edit', async(req,res)=>{
     let dbo = client.db("ATNCompany");
     await dbo.collection("Employee").updateOne(condition,newValues);
     
-    res.redirect('/sanpham');
+    res.redirect('/nhanvien');
 })
 
 router.get('/insert',(req,res)=>{
@@ -77,7 +77,7 @@ router.post('/insert',async (req,res)=>{
     await dbo.collection("Employee").insertOne(newE);
    
     let results = await dbo.collection("Employee").find({}).toArray();
-    res.render('allNhanVien',{NhanVien:results});
+    res.redirect('/nhanvien');
 })
 
 router.get('/search',(req,res)=>{
