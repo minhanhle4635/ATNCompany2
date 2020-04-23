@@ -105,6 +105,7 @@ router.post('/edit', upload.single('picture'), async(req,res)=>{
     await dbo.collection("Product").updateOne(condition,newValues);
     
     res.redirect('/sanpham');
+})
 
 
 router.get('/insert',(req,res)=>{
