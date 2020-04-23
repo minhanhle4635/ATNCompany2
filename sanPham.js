@@ -80,32 +80,31 @@ router.get('/edit', async(req,res)=>{
   }
 })
 
-router.post('/edit', async(req,res)=>{
+router.post('/edit', upload.single('picture'), async(req,res)=>{
     let id = req.body.id;
-    let name = req.body.ProductName;
-    let origin = req.body.Origin;
-    let price = req.body.Price;
-    let status = req.body.Status;
+    let name = req.body.name;
+    let origin = req.body.origin;
+    let price = req.body.price;
+    let status = req.body.status;
 
     var img = fs.readFileSync(req.file.path);
     var encode_image = img.toString('base64');
+    var filename = req.params.id;
 
     var finalImg = {
       contentType: req.file.mimetype,
       image: new Buffer(encode_image, 'base64')
     };
 
-    let newValue ={$set : {ProductName: name, Origin : origin, Price: price, Status: status, Image : finalImg}};
-
     var ObjectID = require('mongodb').ObjectID;
     let condition = {"_id" : ObjectID(id)};
+    let newValues ={$set : {ProductName: name, Origin : origin, Price: price, Status: status, Image: finalImg}};
     
     let client= await MongoClient.connect(url);
     let dbo = client.db("ATNCompany");
-    await dbo.collection("Product").updateOne(condition,newValue);
+    await dbo.collection("Product").updateOne(condition,newValues);
     
     res.redirect('/sanpham');
-})
 
 
 router.get('/insert',(req,res)=>{
