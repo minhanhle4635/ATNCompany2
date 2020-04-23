@@ -25,15 +25,15 @@
         <div class="contact-form">
             <form class="input-fields" action="edit" enctype="multipart/form-data" method="POST">
                 <input type="hidden" name="id" value="{{sanPham._id}}">
-                Name : <input type="text" name="ProductName" value="{{sanPham.ProductName}}">
+                Name : <input type="text" class="input" name="name" value="{{sanPham.ProductName}}">
                 <br>
-                Origin: <input type="text" name="Origin" value="{{sanPham.Origin}}">
+                Origin: <input type="text" class="input" name="origin" value="{{sanPham.Origin}}">
                 <br>
-                Price : <input type="text" name="Price" value="{{sanPham.Price}}">
+                Price : <input type="text" class="input" name="price" value="{{sanPham.Price}}">
                 <br>
-                Status : <input type="text" name="Status" value="{{sanPham.Status}}">
+                Status : <input type="text" class="input" name="status" value="{{sanPham.Status}}">
                 <br>
-                <input style="margin-top: -8px;" type="file" name="picture" accept="image/*">
+                <input style="margin-top: -8px;" type="file" class="input" name="picture" accept="image/*">
                 <input type="submit" class="button" value="Update">
             </form>
         </div>
