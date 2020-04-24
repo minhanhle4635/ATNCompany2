@@ -4,6 +4,7 @@ body {
   font-weight: 400;
   background: url(/toy.jpg) no-repeat top center;
   background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
 }
 
@@ -28,7 +29,7 @@ header::after{
   padding: 10px 0;
 }
 
-nav {
+nav {  
   float:right;
 }
 
