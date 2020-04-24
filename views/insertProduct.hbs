@@ -23,15 +23,15 @@
     </header>
     <div class="wrapper">
         <div class="contact-form"> 
-            <form class="input-fields" action="insert" enctype="multipart/form-data" method="POST">
+            <form class="input-fields" enctype="multipart/form-data" action="insert" method="POST">
                 <input type="hidden" name="id" value="{{sanPham._id}}">
-                Product Name <input type="text" name="ProductName">
+                Product Name <input type="text" class="input" name="ProductName">
                 <br>
-                Origin <input type="text" name="Origin">
+                Origin <input type="text"class="input" name="Origin">
                 <br>
-                Price <input type="text" name="Price"> 
+                Price <input type="text" class="input" name="Price"> 
                 <br>
-                Status <input type="text" name="Status">
+                Status <input type="text" class="input" name="Status">
                 <br>
                 <input style="margin-top: -8px;" type="file" name="picture" accept="image/*">
                 <input type="submit" class="button" value="Insert SP">

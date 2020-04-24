@@ -90,7 +90,7 @@ router.post('/edit', upload.single('picture'), async(req,res)=>{
     var img = fs.readFileSync(req.file.path);
     var encode_image = img.toString('base64');
     var filename = req.params.id;
-
+    
     var finalImg = {
       contentType: req.file.mimetype,
       image: new Buffer(encode_image, 'base64')
