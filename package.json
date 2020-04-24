@@ -1,7 +1,6 @@
 {
   "name": "assignment-2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "auth": "0.0.9",
@@ -30,5 +29,6 @@
   "bugs": {
     "url": "https://github.com/minhanhlegch190017/ATNCompany2/issues"
   },
-  "homepage": "https://github.com/minhanhlegch190017/ATNCompany2#readme"
+  "homepage": "https://github.com/minhanhlegch190017/ATNCompany2#readme",
+  "description": ""
 }
