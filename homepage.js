@@ -14,7 +14,7 @@ router.get('/',(req,res)=>{
       res.render('homepage');
 })
 
-router.get('/', function (req, res) {
+router.get('/logout', function (req, res) {
     req.session.username = null;
     res.redirect('/');
 });
